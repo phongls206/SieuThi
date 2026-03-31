@@ -27,7 +27,7 @@ namespace SieuThi
             app.MapStaticAssets();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Login}/{id?}")
+                pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
 
             app.Run();
