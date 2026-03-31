@@ -1,0 +1,165 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@if (TempData["Success"] != null)
+{
+    <div style="color: green; font-weight: bold;">
+        @TempData["Success"]
+    </div>
+}
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 220px;
+        background: #f5f5f5;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .menu {
+        list-style: none;
+        padding: 0;
+    }
+
+        .menu li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+            .menu li:hover {
+                background: #ddd;
+            }
+
+    /* Main */
+    .main {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .box {
+        text-align: center;
+    }
+
+    .search {
+        margin: 10px 0;
+    }
+
+        .search input {
+            padding: 8px;
+            width: 200px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background: #007bff;
+        color: white;
+        padding: 10px;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .logout {
+        margin-top: 30px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px solid blue;
+        background: white;
+        cursor: pointer;
+    }
+</style>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="/images/logo.png" class="logo" />
+
+        <ul class="menu">
+            <li>Quản lý nhân viên</li>
+            <li>Quản lý tài khoản</li>
+            <li>Quản lý hàng hóa</li>
+            <li><b>Thống kê</b></li>
+            <li>Tài khoản</li>
+        </ul>
+
+        <button class="logout">Đăng xuất</button>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- Top thống kê -->
+        <div class="top">
+            <div class="box">
+                <b>Tổng hoá đơn</b><br />0
+            </div>
+            <div class="box">
+                <b>Tổng tiền</b><br />0
+            </div>
+            <div class="box">
+                <b>Số hoá đơn hôm nay</b><br />0
+            </div>
+            <div class="box">
+                <b>Tổng tiền hôm nay</b><br />0
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="search">
+            <input placeholder="Tìm kiếm tên..." />
+        </div>
+
+        <!-- Table -->
+        <table>
+            <tr>
+                <th>Mã hoá đơn</th>
+                <th>Tên nhân viên</th>
+                <th>Ngày bán</th>
+                <th>Tổng tiền</th>
+            </tr>
+
+            <tr>
+                <td>HD01</td>
+                <td>Phong</td>
+                <td>20/03/2026</td>
+                <td>0</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>

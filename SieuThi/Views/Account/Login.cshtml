@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            background: url('/images/sieuthi.png') no-repeat;
+            
+            height: 100vh;
+        }
+
+        .box {
+            width: 350px;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            float: right;
+            padding: 40px;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .login {
+            background: blue;
+            color: white;
+        }
+
+        .exit {
+            background: gray;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Xin chào!</h2>
+
+        <form method="post">
+            <input name="username" placeholder="Tài khoản" />
+            <input name="password" type="password" placeholder="Mật khẩu" />
+
+            <button class="login">Đăng nhập</button>
+            <button type="button" class="exit">Thoát</button>
+        </form>
+        <a href="/Account/Register">Tạo tài khoản</a>
+        <p>@ViewBag.Error</p>
+        
+    </div>
+
+    <script>
+        var msg = '@TempData["Success"]';
+        if (msg) {
+            alert(msg);
+        }
+    </script>
+</body>
+</html>
